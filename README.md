@@ -22,6 +22,24 @@ A simple HTTP service that monitors Docker container volumes and their usage sta
 go mod download
 ```
 
+## Docker Usage
+
+To run as a Docker container:
+
+```bash
+# Build the image
+docker build -t docker-image-api .
+
+# Run the container with Docker socket access
+docker run -d \
+  --name docker-image-api \
+  -p 6969:6969 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  docker-image-api
+```
+
+Note: The container requires access to the Docker socket (~/var/run/docker.sock~) to communicate with the Docker daemon and monitor container volumes. This gives the container privileged access to Docker operations on the host system.
+
 ## Usage
 
 ### Start the server:
