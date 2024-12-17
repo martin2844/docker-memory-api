@@ -18,34 +18,34 @@ A simple HTTP service that monitors Docker container volumes and their usage sta
 
 1. Clone the repository
 2. Install dependencies:
-~~~
+```
 go mod download
-~~~
+```
 
 ## Usage
 
 ### Start the server:
-~~~
+```
 go run main.go
-~~~
+```
 
 The server will start on port 6969.
 
 ### API Endpoints
 
 1. Get all container volume stats:
-~~~
+```
 GET http://localhost:6969/stats
-~~~
+```
 
 2. Get volume stats for a specific container:
-~~~
+```
 GET http://localhost:6969/stats/{containerID}
-~~~
+```
 
 ### Example Response
 
-~~~json
+```json
 [
     {
         "container_name": "wp_dev-wordpress1-1",
@@ -56,7 +56,7 @@ GET http://localhost:6969/stats/{containerID}
         "port": "8080"
     }
 ]
-~~~
+```
 
 ## How it Works
 
